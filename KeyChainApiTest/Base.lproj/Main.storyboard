@@ -15,14 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hj8-vq-FVl">
-                                <rect key="frame" x="24" y="144" width="366" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="jr6-gQ-6FS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fx7-9k-vMZ">
                                 <rect key="frame" x="132" y="216" width="150" height="30"/>
                                 <constraints>
@@ -34,17 +26,6 @@
                                     <action selector="onSaveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ih-BD-A9O"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKb-EX-0F8">
-                                <rect key="frame" x="122" y="350" width="170" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="2NL-Z0-BBn"/>
-                                    <constraint firstAttribute="width" constant="170" id="two-Vi-Tv5"/>
-                                </constraints>
-                                <state key="normal" title="Read from thekeychain"/>
-                                <connections>
-                                    <action selector="onReadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gil-mn-uaP"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuD-0L-8pT">
                                 <rect key="frame" x="24" y="278" width="366" height="40"/>
                                 <constraints>
@@ -54,30 +35,98 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="zEm-yi-qJC">
+                                <rect key="frame" x="24" y="147" width="366" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1g-HH-qbz">
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hj8-vq-FVl">
+                                        <rect key="frame" x="207" y="0.0" width="159" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="jr6-gQ-6FS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pwm-wx-Fjg"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="pvT-Gh-4mn">
+                                <rect key="frame" x="24" y="350" width="341" height="45"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PlV-Um-oIt">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKb-EX-0F8">
+                                        <rect key="frame" x="171" y="0.0" width="170" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="2NL-Z0-BBn"/>
+                                            <constraint firstAttribute="width" constant="170" id="two-Vi-Tv5"/>
+                                        </constraints>
+                                        <state key="normal" title="Read from thekeychain"/>
+                                        <connections>
+                                            <action selector="onReadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gil-mn-uaP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ila-GO-LD9"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="nRw-Tg-jTq">
+                                <rect key="frame" x="24" y="425" width="366" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="key to delete" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tes-Z9-4Ra">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdW-H2-IKT">
+                                        <rect key="frame" x="184" y="0.0" width="182" height="34"/>
+                                        <state key="normal" title="Remove from the keychain"/>
+                                        <connections>
+                                            <action selector="onRemoveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GBw-th-6x3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Fx7-9k-vMZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="08r-2B-LuD"/>
+                            <constraint firstItem="pvT-Gh-4mn" firstAttribute="top" secondItem="nuD-0L-8pT" secondAttribute="bottom" constant="32" id="0aC-XV-wMB"/>
                             <constraint firstItem="nuD-0L-8pT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="3nu-id-LVO"/>
-                            <constraint firstItem="hj8-vq-FVl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="6hZ-3q-fLc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hj8-vq-FVl" secondAttribute="trailing" constant="24" id="bel-g0-PrH"/>
-                            <constraint firstItem="aKb-EX-0F8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d1E-CO-p3c"/>
+                            <constraint firstItem="zEm-yi-qJC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="103" id="OFN-ft-LVA"/>
+                            <constraint firstItem="Fx7-9k-vMZ" firstAttribute="top" secondItem="zEm-yi-qJC" secondAttribute="bottom" constant="29" id="QGx-7t-hFp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zEm-yi-qJC" secondAttribute="trailing" constant="24" id="QoT-B3-K15"/>
+                            <constraint firstItem="pvT-Gh-4mn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Slg-y5-4ge"/>
+                            <constraint firstItem="nRw-Tg-jTq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Xof-Yi-T63"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nuD-0L-8pT" secondAttribute="trailing" constant="24" id="f9a-pO-3Jd"/>
-                            <constraint firstItem="aKb-EX-0F8" firstAttribute="top" secondItem="nuD-0L-8pT" secondAttribute="bottom" constant="32" id="gma-1R-ner"/>
                             <constraint firstItem="nuD-0L-8pT" firstAttribute="top" secondItem="Fx7-9k-vMZ" secondAttribute="bottom" constant="32" id="kE5-Gt-c5N"/>
-                            <constraint firstItem="hj8-vq-FVl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="paj-8x-aPk"/>
-                            <constraint firstItem="Fx7-9k-vMZ" firstAttribute="top" secondItem="hj8-vq-FVl" secondAttribute="bottom" constant="32" id="xaf-RQ-a1z"/>
+                            <constraint firstAttribute="trailing" secondItem="nRw-Tg-jTq" secondAttribute="trailing" constant="24" id="kSC-zR-h1E"/>
+                            <constraint firstItem="nRw-Tg-jTq" firstAttribute="top" secondItem="pvT-Gh-4mn" secondAttribute="bottom" constant="30" id="s68-tf-0PE"/>
+                            <constraint firstItem="zEm-yi-qJC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="uAZ-t8-9hE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="entryData" destination="hj8-vq-FVl" id="tnK-IQ-cJv"/>
+                        <outlet property="keyToDelete" destination="Tes-Z9-4Ra" id="JPf-Fp-wRK"/>
+                        <outlet property="keyToRead" destination="PlV-Um-oIt" id="MVp-tM-1q1"/>
+                        <outlet property="keyToSave" destination="g1g-HH-qbz" id="vVb-CS-X0V"/>
                         <outlet property="outputLabel" destination="nuD-0L-8pT" id="Zjd-Cz-9bi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="138"/>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
