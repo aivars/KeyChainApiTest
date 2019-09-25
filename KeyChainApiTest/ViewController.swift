@@ -9,12 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var entryData: UITextField!
+    @IBOutlet weak var outputLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func onSaveButton(_ sender: Any) {
+        KeyChainApi.save(entryData?.text ?? "no data provided", for: "secret")
+    }
+    
+    @IBAction func onReadButton(_ sender: Any) {
+        if let readData = KeyChainApi.retrive(for: "secret") {
+            outputLabel.text = readData
+        } else {
+            outputLabel.text = "wtf?!"
+        }
+    }
 }
 

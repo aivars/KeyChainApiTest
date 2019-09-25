@@ -30,5 +30,12 @@ class KeyChainApiTestTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testPaswordRetrive() {
+        let  password = "123456"
+        let account = "User"
+        KeyChainApi.save(password, for: account)
+        XCTAssertEqual(KeyChainApi.retrive(for: account), password)
+    }
 
 }
